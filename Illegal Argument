@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Illegal Arguments
+        while(true){
+            System.out.print("Enter a positive number: ");
+            int num = scanner.nextInt();
+
+            try {
+                if (num < 0) {
+                    throw new IllegalArgumentException("Number must be positive");
+                }
+                System.out.println("You entered a valid number: " + num);
+            } catch (IllegalArgumentException e) {
+                System.err.println("IllegalArgumentException occurred: " + e.getMessage());
+            }
+        }
+    }
+}
