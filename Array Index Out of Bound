@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class Main{
+    public static void main(String[] args) {
+        int[] num = { 1, 2, 3, 4, 5 };
+        //ArrayIndexOutOfBoundsExceptionExample
+
+        while(true){
+            Scanner scanner = new Scanner(System.in);
+
+            System.out.print("Enter an index to access the array: ");
+            int index = scanner.nextInt();
+
+            try {
+                int value = num[index];
+                System.out.println("Value at index " + index + ": " + value);
+            } catch (ArrayIndexOutOfBoundsException e) {
+                System.err.println("ArrayIndexOutOfBoundsException occurred: " + e.getMessage());
+            }
+        }
+    }
+}
